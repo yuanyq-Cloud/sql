@@ -47,14 +47,14 @@
               style="margin-left: 15px; font-size: 20px"
             ></i>
             <el-dropdown-menu slot="dropdown">
-              <span @click="toLog('login')"
-                ><el-dropdown-item>登录</el-dropdown-item></span
+              <div @click="toLog('login')"
+                ><el-dropdown-item>登录</el-dropdown-item></div
               >
-              <span @click="toLog('register')"
-                ><el-dropdown-item>注册</el-dropdown-item></span
+              <div @click="toLog('register')"
+                ><el-dropdown-item>注册</el-dropdown-item></div
               >
-              <span @click="toLog('logout')"
-                ><el-dropdown-item>退出</el-dropdown-item></span
+              <div @click="toLog('logout')"
+                ><el-dropdown-item>退出</el-dropdown-item></div
               >
             </el-dropdown-menu>
           </el-dropdown>
@@ -80,7 +80,7 @@
 
 <script>
 export default {
-  name:"main",
+  name:"MainUI",
   data() {
     // const item = {
     //   photo: Logo,
@@ -92,7 +92,7 @@ export default {
     };
   },
   methods: {
-    toLog: (event) => {
+    toLog(event){
       this.$emit(event);
     },
   },

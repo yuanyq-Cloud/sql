@@ -1,22 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Taobao from "../views/Taobao";
 import HotWord from "../views/HotWord";
-import Main from "../views/Main";
-import Login from "../views/Login";
+import MainUI from "../views/MainUI";
+import Taobao from "../views/Taobao";
 import Jd from "../views/Jd";
 import HotProduct from "../views/HotProduct";
 import Guess from "../views/Guess";
+import Login from "../views/Login";
+import Register from "../views/Register";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Main",
-    component: Main,
+    component: MainUI,
     children: [
-      { path: "", redirect: "tb" },
+      { name: "MainUI", path: "", redirect: "tb" },
       { path: "tb", component: Taobao },
       { path: "jd", component: Jd },
       { path: "hw", component: HotWord },
@@ -31,6 +31,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: Login,
+  },
+  {
+    path: "/reg",
+    name: "register",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Register,
   },
 ];
 

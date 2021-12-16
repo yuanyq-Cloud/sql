@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <router-view  />
+    <router-view @login="red('login')" @register="red('register')" @logout="logout"/>
   </div>
 </template>
 <script>
-// import Main from "./views/Main.vue";
 export default {
   name: "App",
-  components: {
-    // "main-ui": Main,
-  },
+  components: {},
   methods: {
+    red:function (url){
+      console.log(String(url))
+      this.$router.push({name: String(url)})
+    },
+    logout:()=>{
+      console.log('exit')
+    }
   },
-};
+}
 </script>
 <style>
 #app {
